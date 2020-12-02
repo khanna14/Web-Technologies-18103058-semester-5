@@ -1,5 +1,4 @@
 import java.util.*;
-//6 milliseconds
 
 public class ans5_2 {
 

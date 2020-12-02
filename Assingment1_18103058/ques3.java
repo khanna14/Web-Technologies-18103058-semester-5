@@ -16,7 +16,7 @@ class ques3
 	int V, E; 
 	Edge edge[]; 
 
-	question3(int v, int e) 
+	ques3(int v, int e) 
 	{ 
 		V = v; 
 		E = e; 
@@ -25,7 +25,7 @@ class ques3
 			edge[i] = new Edge(); 
 	} 
 	
-	void BellmanFord(question3 graph, int src) 
+	void distcalc(ques3 graph, int src) 
 	{ 
 		int V = graph.V, E = graph.E; 
 		int dist[] = new int[V]; 
@@ -77,8 +77,8 @@ class ques3
 		System.out.println("Enter no. of edges:");
 		int E = input.nextInt();  
 
-		question3 graph = new question3(V, E); 
-		System.out.println("Enter the source vertex, destination vertex and weight of each edge:");
+		ques3 graph = new ques3(V, E); 
+		System.out.println("Enter the source vertex /space/ destination vertex /space/ weight  for all edges:");
 		for(int i=0;i<E;i++)
 		{
 			graph.edge[i].src = input.nextInt(); 
@@ -86,6 +86,6 @@ class ques3
 			graph.edge[i].weight = input.nextInt();
 		}
 		input.close();
-		graph.BellmanFord(graph, 0); 
+		graph.distcalc(graph, 0); 
 	} 
 } 

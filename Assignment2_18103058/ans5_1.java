@@ -22,10 +22,13 @@ public class ans5_1 {
         }
         System.out.print("\nIntersection is:");
         if(emptyflag==1)
-            System.out.print("NULL");
+            System.out.println("NULL");
         else
             for(int i=0; i<index; i++)
                 System.out.print(" " + ours[i]);
+
+         System.out.print("");
+        
     }
 
     public static void union(int []a1, int[] a2) {
@@ -80,6 +83,8 @@ public class ans5_1 {
         else
         for(i=0; i<j; i++)
             System.out.print(" " + ours[i]);
+        
+        System.out.println("");
     }
 
     public static int[] finetune(int[] a1) {
@@ -131,13 +136,15 @@ public class ans5_1 {
             }
         }
 		long start = System.currentTimeMillis();
-        arr1=finetune(arr1); //sort and handle repetitions
+        arr1=finetune(arr1); 
         arr2=finetune(arr2);
         union(arr1, arr2);
         intersection(arr1, arr2);
+        System.out.println("Ist Set");
         complement(arr1, ref);
+        System.out.println("2nd Set");
         complement(arr2, ref);
-		long end = System.currentTimeMillis();
+        long end = System.currentTimeMillis();
         System.out.println("Time taken: "+(end-start)+" milliseconds");
     }
 }

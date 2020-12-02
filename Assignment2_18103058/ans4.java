@@ -1,21 +1,21 @@
 public class ans4{
     public static void main(String[] args){
-        int n=1;
+        int start=1;
         long sum = 1;
-        while(n<Integer.MAX_VALUE){
-            if(sum == (long)n*(long)n ){
-            	if(n==1)
-                System.out.println("Answer="+n);
+        while(start<Integer.MAX_VALUE){
+            if(sum == (long)start*(long)start ){
+            	if(start==1)
+                System.out.println("Answer="+start);
             	else
                 break;
             }
             
-            n+=1;
-            sum+=n;
+            start+=1;
+            sum+=start;
         }
-        if(sum!=(long)n*(long)n)
-        System.out.println("Sum= " +sum+ ",n= " +n + " i.e limitation of system but not a solution");
-        if(sum==(long)n*(long)n)
-        	System.out.println("Sum= " +sum+ ",n= " +n);
+        if(sum!=(long)start*(long)start)
+            System.out.println("Sum= " +sum+ ",n= " +start + " i.e limitation of system but not a solution");
+        if(sum==(long)start*(long)start)
+        	System.out.println("Sum= " +sum+ ",n= " +start);
     }
 }

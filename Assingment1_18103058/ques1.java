@@ -1,54 +1,54 @@
 import java.util.Scanner;
 
-public class quem
+public class ques1
 {
 	public static void main(String[] args)
 	{
 		System.out.println("Enter string");
 		Scanner scan= new Scanner(System.in);
-		String m,n;
-		m=scan.nextLine();
+		String str,sub_str;
+		str=scan.nextLine();
 		
-		System.out.println("Enter substring to be found");
-		n=scan.next();
+		System.out.println("Enter substring");
+		sub_str=scan.next();
 
-		int k1=m.length();
-		int k2=n.length();
+		int k1=str.length();
+		int k2=sub_str.length();
 		int z=0,ans=0;
 		
 		if(k1<k2)
 		System.out.println("0");
 		
 		else {
-			int [] a;
-			int [] b;
-			a= new int[500];
-			b=new int[500];
+			int [] countStr;
+			int [] countSubstr;
+			countStr = new int[150];
+			countSubstr = new int[150];
 				for (int i=0;i<k2;i++)
-					 b[(int)n.charAt(i)]++;
+					 countSubstr[(int)sub_str.charAt(i)]++;
 				for(int i=0;i<k2;i++){
-				        int k=(int)m.charAt(i);
-		          		if(a[k]<b[k])
+				        int k=(int)str.charAt(i);
+		          		if(countStr[k]<countSubstr[k])
 			            		z++;
-		          		a[k]++;
+		          		countStr[k]++;
 
 				          if(z==k2)
 				            ans++;}
 	
 				          for(int i=k2;i<k1;i++){
 	
-				        int k=(int)m.charAt(i);
-		        		int p=(int)m.charAt(i-k2);
+				        int k=(int)str.charAt(i);
+		        		int p=(int)str.charAt(i-k2);
 	
-				        if(a[p]<=b[p])
+				        if(countStr[p]<=countSubstr[p])
 			        		z--;
 
-				        a[p]--;
+				        countStr[p]--;
 
-				        if(a[k]<b[k])
+				        if(countStr[k]<countSubstr[k])
 					        z++;
 
-				        a[k]++;
+				        countStr[k]++;
 
 				        if(z==k2)
 					        ans++;}

@@ -34,12 +34,13 @@ public class ans6{
 
 	public static void main(String[] args) 
 	{ 	
+		System.out.println("Enter a +ve Number : - ");
 		Scanner sc = new Scanner(System.in);
 	    int N = sc.nextInt(); 
 	    int x; 
 	  
 
-	    x = Hai(N); 
+	    x = Hail(N); 
 	
 	    System.out.println(); 
 	    System.out.println("Total Steps: " +x); 

@@ -23,34 +23,16 @@ public class  crawler {
     private static int depth = 0; //Current Depth
 
     public static boolean isValid(String url) {
-        /*
-            To check validity of url
-            Param:
-            url:String - URL
-            Return:
-            Boolean-Validity
-        */
-        /* Try creating a valid URL */
         try {
             new URL(url).toURI();
             return true;
         }
-        // If there was an Exception
-        // while creating URL object
         catch (Exception e) {
             return false;
         }
     }
 
     public static int frequency(String paragraph, String substring) {
-        /*
-            To find frequency of a string(substring) in another string(paragraph)
-            param:
-            paragraph:String-String in which frequency to be calculated
-            substring:String-String of which frequency is to be calculated
-            return:
-            frequency:Integer
-         */
         if (paragraph.length() == 0 || substring.length() == 0) {
             return 0;
         }
@@ -58,13 +40,6 @@ public class  crawler {
     }
 
     public static boolean facultyRelated(final Document page) {
-        /*
-            Check if the page is related to faculty by checking the frequency of faculty related words
-            param:
-            page:Document-HTML page
-            return
-            boolean-related or not
-         */
         if (page == null) {
             return false;
         }
@@ -82,13 +57,6 @@ public class  crawler {
     }
 
     public static boolean facultyRelated(String str, int freqThreshold) {
-        /*
-            Check if the url is related to faculty by checking the frequency of faculty related words
-            param:
-            url:String-url of page
-            return
-            boolean-related or not
-         */
         if (str.length() == 0) {
             return false;
         }
@@ -106,23 +74,12 @@ public class  crawler {
     }
 
     public static void extractLinks(final Document page) {
-        /*
-            To extract the links from "<a>" tags
-            param:
-            page:Document-HTML page
-         */
         if (page == null) {
             return;
         }
         Elements links = page.getElementsByTag("a");
         for (Element link : links) {
             String newURL = link.attr("abs:href"); //"abs" will return only absolute links by converting relative links to absolute
-            /*
-            Conditions:
-            Url should not be a link to a section of the page
-            It should not have been visited
-            It should contains the "urlContains" string
-             */
             if (!newURL.contains("#") && !visitedLinks.contains(newURL) && newURL.contains(urlContains)) {
                 Link temp = new Link();
                 temp.url = newURL;
@@ -133,11 +90,6 @@ public class  crawler {
     }
 
     public static void extractText(final Document page) {
-        /*
-            To extract the text from "<p>","<blockquote>" tags
-            param:
-            page:Document-HTML page
-         */
         if (page == null) {
             return;
         }
@@ -160,19 +112,12 @@ public class  crawler {
     }
 
     public static void crawl(String url, String text) {
-        /*
-        To crawl a webpage
-        param
-        url:String-URL of page
-        text:String -Text in "<a>" tag in which url was found
-         */
         if (url.length() == 0) {
             return;
         }
         if (visitedLinks.contains(url)) {
             return;
         }
-//        System.out.println("Parsing: " + url);//+ " Depth: " + depth);
         visitedLinks.add(url);
         try {
             if (depth <= maxDepth) {
@@ -212,16 +157,11 @@ public class  crawler {
     }
 
     public static void main(String[] args) {
-        /*
-        main Function
-         */
-
-        //Create FileWriter Objects and write header rows
         try {
             if (!System.getProperty("user.dir").contains("Assignment_3")) {
-                linksFile = new FileWriter("Assignment_3\\links.csv");
-                textFile = new FileWriter("Assignment_3\\text.csv");
-                objectFile = new FileWriter("Assignment_3\\object.csv");
+                linksFile = new FileWriter("Assignment 3\\links.csv");
+                textFile = new FileWriter("Assignment 3\\text.csv");
+                objectFile = new FileWriter("Assignment 3\\object.csv");
             } else {
                 linksFile = new FileWriter("links.csv");
                 textFile = new FileWriter("text.csv");

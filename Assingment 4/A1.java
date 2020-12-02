@@ -5,10 +5,16 @@ class A1 {
 	public static void main(String[] args)
 	{
 		int n;
+		int m;
 		Scanner in = new Scanner(System.in);
+		System.out.println("Enter no of columns-");
 		n = in.nextInt();
+		System.out.println("Enter no of rows-");
+		m = in.nextInt();
 		in.nextLine();
 		String[] crops = new String[n];
+		System.out.println("Enter arrays-");
+
 		for (int i=0;i<n;i++){
 			crops[i]=in.nextLine().trim();
 		}
@@ -25,7 +31,7 @@ class A1 {
 		arr[0][0] = 0;
 		for(int i= 1;i<N;++i) {
 			arr[i][0] = arr[i-1][0];
-			if(crops[i].charAt(0)!=' '&&crops[i].charAt(0)==crops[i-1].charAt(0)) {
+			if(crops[i].charAt(0)!=' ' && crops[i].charAt(0) == crops[i-1].charAt(0)) {
 				arr[i][0] = 1+arr[i][0];
 				String s = crops[i];
 				s = ' '+s.substring(1);

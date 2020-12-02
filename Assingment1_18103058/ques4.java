@@ -20,8 +20,8 @@ class ques4{
 		s2=sc.nextLine();
 		boolean answer=areAnagram(s1,s2);
 		if(answer==true)
-			System.out.println("Strings are anagrams");
+			System.out.println("anagrams it is");
 		else
-			System.out.println("Strings are not anagrams");
+			System.out.println("not anagrams");
 	}
 }

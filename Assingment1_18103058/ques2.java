@@ -1,11 +1,11 @@
 import java.util.Scanner;
 public class ques2{
 	public static void main(String[] args) {
-		System.out.println("Enter the string:");
+		System.out.println("Enter the paragraph : -");
 		Scanner scan=new Scanner(System.in);
 		String p;
 		p=scan.nextLine();
-		System.out.println("Enter the size of replacement vector:");
+		System.out.println("Enter the number of words to be replaced:-");
 		int n=scan.nextInt();
 		int x=0;
 		String[] s=new String[500];
@@ -14,7 +14,7 @@ public class ques2{
 		String temp="";
 		java.util.HashMap<String, Integer> mark = new java.util.HashMap<String, Integer>();
 		for(int i=0;i<n;i++){
-		        System.out.println("Enter word to be replaced: ");
+				System.out.println("Enter word "+ i + " to be replaced :-");
 		        s1[i]=scan.next();
 		        s2[i]=String.valueOf(s1[i].charAt(0)); 
 	        for(int r=0;r<s1[i].length()-1; r++) {
